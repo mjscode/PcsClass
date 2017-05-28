@@ -1,0 +1,127 @@
+html{
+	background-color:azure
+}
+h1{
+	color: rgba(102, 90, 161, 0.8);
+	font-family:"Arial Black";
+	font-size:58px;
+	width:200px;
+	padding:0px 355px;
+	
+}
+.header{
+	position: fixed;
+}
+
+*{
+	text-align:center;
+}
+li{
+		list-style-position: inside;
+		color:red;
+		font-size:20px;
+		list-style-image:url(bullet2.png);
+}
+body{
+	background-color:rgb(66, 244, 219);
+	max-width:900px;
+	margin:auto;
+	border:4px solid black;
+	margin-top: 270px;
+ 
+}
+#main_header{
+	background-image:url("/pcs/Mj's/canstockphoto1506207.jpg");
+	background-position:center;
+	background-repeat:no-repeat;
+	 position: fixed;
+	 top:0;
+	width:50%;
+	margin:auto;
+}
+h2{
+		color: rgba(64, 57, 101, 0.85);
+	font-family:"Arial";
+	font-size:50px;
+}
+h3{
+	color:red;
+	font-family:"Comic Sans MS";
+    font-size:30px;	
+}
+p{
+	font-family:"Lucida Sans Unicode";
+}
+.menuText{
+	font-size:50px;
+}
+.menu_nav, .menu_artical{
+		box-sizing: border-box;
+}
+
+.menu_nav{
+			display: inline-block;
+			vertical-align: top;
+			padding-right: 6px;
+			width: 15%;
+
+
+}
+.menu_header{
+	position:fixed;
+	border-bottom: 1px solid black;
+	top:0;
+}
+.menu_artical{
+		display: inline-block;
+			width: 80%;
+			border-left: 1px solid black;
+			padding-left: 6px;
+}
+ video {
+            width: 100%;
+        }
+
+        @media screen and (min-width: 600px) {
+            .video {
+                width: 33.333%;
+                display: inline-block;
+                padding: 10px;
+            }
+        }
+#main_header+h2{
+	font-style: italic;
+}
+
+.menu_nav li {
+	font-family: cursive;
+	  padding: 10px;
+            border-bottom: 1px solid black;
+            border-top: 1px solid #3c3c3c;
+			list-style: none;
+}
+        .menu_nav li:first-child {
+            border-top: none;
+        }
+
+        
+       a{
+		   text-decoration: none;
+	   }
+  table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        caption {
+            border: 1px solid black;
+            color: rebeccapurple;
+            font-size: 3em;
+            border-top: none;
+            caption-side: bottom;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px 4px;
+        }

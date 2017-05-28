@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/pcs/Mj's/normalize_style.css" type="text/css" rel="stylesheet">
+<link href="/pcs/Mj's/menu_style3.css" type="text/css" rel="stylesheet">
+    <title>Forum</title>
+</head>
+<body>
+    <div class="order_header">
+    <h1>Order Page</h1>
+    </div>
+    <div class="order_main">
+    <form action="processOrder.php" method="post">
+         <fieldset>
+        <legend>contact info</legend>
+        <label for ="Name">Name <input type="text" name="Name" placeholder="Enter Name"/></label>
+        <label for="email">Email<input type="email" name="email" required/></label>
+        <label>Telephone <input type="tel" name="telephone" ></label>
+        
+         </fieldset>
+         <fieldset>
+             <legend>order info</legend>
+         <label>
+                order
+                <input type="checkbox" name="order" value="cholent"/>cholent
+                <input type="checkbox" name="order" value="kishkeh" />kishkeh
+                <input type="checkbox" name="order" value="kugel"/>kugel
+                <input type="checkbox" name="order" value="soda"/>soda
+            </label>
+         <label>Rate Us! <input type="range" name="rating" min="0" max="5"/></label>
+         </fieldset>
+         <input type="submit"/>
+    </form>
+    </div>
+</body>
+</html>
