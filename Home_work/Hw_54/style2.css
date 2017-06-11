@@ -1,0 +1,114 @@
+.navbar{
+    background-color: black;
+}
+nav .container{
+    margin-top: 1%;
+}
+video{
+    width:100%;
+}
+
+*{
+    font-family:helvetica, arial, sans-serif; 
+}
+
+body{
+    margin-bottom:5%;
+    margin-left: 0;
+}
+
+
+
+ a:link{
+    text-decoration: none;
+    color:white;
+}
+a:visited {
+    text-decoration: none;
+    color:white;
+}
+
+a:hover {
+    text-decoration: underline;
+    color:red;
+}
+h1 {
+    text-transform: uppercase;
+}
+span {
+    
+    font-style: italic;
+}
+.thumbnail .caption {
+    
+    text-align: center;
+}
+.thumbnail p{
+    text-align: justify;
+}
+#sign_up{
+    background-color: burlywood;
+    border-radius: 5px;
+    text-align: center;
+    padding:5%;
+}
+
+input{
+    border-radius: 5px;
+    box-shadow:2;
+}
+
+.table-striped{
+    background-color:#4d79ff;
+}
+
+
+
+
+
+.table{
+    width:85%;
+    margin:auto;
+}
+
+caption {
+            text-align: center;
+            font-size: 1.5em;
+            padding-top: 2%;
+            padding-bottom:2%;
+}
+  th, td {
+            
+            padding: 8px 4px;
+        }
+td{
+    
+    text-align: right;
+}
+tr:hover{
+    color:blue;*/
+  
+}
+tr td:last-child{
+    color:red;
+}
+footer{
+   
+    background-color:black; 
+    
+}
+footer p{
+    padding-left: 3%;
+    color:white;
+}
+
+/*
+tr:nth-child(even):hover {
+    /*color:blue;*/
+   /*background-color:blue; 
+}
+/*footer p{
+    
+    padding-left:10%;   
+}
+*/
