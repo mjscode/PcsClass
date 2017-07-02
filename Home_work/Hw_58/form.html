@@ -1,11 +1,10 @@
 <?php
     if(isset($_POST['name'])) { 
-        if ((! is_string($_POST['name'])) || (empty($_POST['name'])))
+        if ((! is_string($_POST['name'])) || (!empty($_POST['name'])))
             die("you must hav a char based name of some sort");
-         $name = $_POST['name'];
         }
-       
-     else {
+        $name = $_POST['amount'];
+    } else {
         die("Name is a required field");
     }
 
@@ -20,7 +19,7 @@
     }
 
     if(isset($_POST['email'])) {
-        if((! is_string($_POST['email'])) || (empty($_POST['email'] < 1))) {
+        if((! is_string($_POST['email'])) || (!empty($_POST['email'] < 1)) {
             die("where do you get your emails from?");
         }
         $email = $_POST['email'];
@@ -52,29 +51,29 @@
 <body>
      <div class="container">
         <div class="jumbotron text-center">
-            <h1>Something</h1>
+            <h1>PCS Interest Calculator</h1>
             <h2>Results</h2>
         </div>
 
         <div>
             <div>
                 <div class="well col-sm-2 text-right">Name</div>
-                <div class="col-sm-10 well"><?= $name ?></div>
+                <div class="col-sm-10 well"><?= name ?></div>
             </div>
             <div>
-                <div class="well col-sm-2 text-right">Age</div>
+                <div class="well col-sm-2 text-right">Rate</div>
                 <div class="col-sm-10 well"><?= number_format($age, 2) ?></div>
             </div>
             <div>
-                <div class="well col-sm-2 text-right">Email</div>
+                <div class="well col-sm-2 text-right">Years</div>
                 <div class="col-sm-10 well"><?= $email ?></div>
             </div>
             <?php
             if($rating != ""){
-             echo "<div>";
-                echo "<div class='well col-sm-2 text-right'>","Rating","</div>";
-                echo "<div class='col-sm-10 well'>",$rating,"</div>";
-            echo "</div>";
+            <div>
+                <div class="well col-sm-2 text-right">Rating</div>
+                <div class="col-sm-10 well"><?= $rating?></div>
+            </div>
             }
             ?>
         </div>
