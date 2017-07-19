@@ -42,10 +42,15 @@
             <select name="choice">
                 <?php 
                  echo options();
-                ?>
-                
+                ?> 
             </select>
             <button type="submit" class="btn btn-default">Get Info</button>
             </form>
+            <div class="well">
+                <h4>click on the link below to add an entry.</h4>
+                <a href="http://localhost/class/Html/Home_work/Hw_63/submission.php">add a sefer</a>
+
+            </div>
+            </div>
 </body>
 </html>

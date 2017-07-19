@@ -1,5 +1,5 @@
 <?php
-$months=["jan", "feb", "march", "april", "may", "june", "july", "aug", "sept",  "oct", "nov", "dec"];
+
 function monthOptions($monthAr){
     $options="";
     foreach($monthAr as $month)
@@ -25,3 +25,4 @@ include "head.php";
                 </div>
                 <button type="submit" class="btn btn-default">Get Days</button>
             </form>
+<?php include "foot.php" ?>

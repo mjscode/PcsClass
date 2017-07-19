@@ -22,8 +22,15 @@ if($_GET){
     }
     
     if(!empty($_GET['languages'])) {
-       
-        $preffered = $_GET['languages'];
+        $entrys=explode(",", $_GET['languages']);
+        foreach($entrys as $entry){
+            if(in_array($entry, $languages)){
+                $preffered[]= "$entry";
+           }else{
+            $errors[]="$entry is not a valid language";   
+           }
+
+        }
     } else {
        
         $errors[]="languages is a required field";
@@ -40,7 +47,7 @@ if($_GET){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap 101 Template</title>
-    <link href="/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>  
@@ -49,10 +56,11 @@ if($_GET){
             <div class="alert alert-danger">
                 <ul>
                     <?php foreach($errors as $error) echo "<li> $error </li>" ?>
-          <?php else : ?>
-                <h3> you submitted correctly! <h3>      
-                </ul>
+                    </ul>
             </div>
+            <?php elseif($_GET) : ?>
+                <h3> you submitted correctly! </h3>      
+                
         <?php endif ?>
         
         <div class="row">
@@ -66,8 +74,10 @@ if($_GET){
             <div class="col-smll-4">Avaible languages: <?php 
             foreach($languages as $language) echo $language, " " ?></div>   
             <?php else : ?>
-            <div class="col-smll-4">Preffered languages: <?php 
-            foreach($preffered as $index) echo $languages[$index], " " ?></div>            
+            <div class="col-smll-4">Preffered languages: </div> 
+            <?php
+            if(!empty($preffered))
+            foreach($preffered as $lang) echo $lang, " " ?></div>            
             <?php endif ?>
         </div>    
         
@@ -86,16 +96,17 @@ if($_GET){
                 </div>
             </div>
             <div class="row">
-                <label for="languages" class="col-sm-4 control-label">Please pick a language:</label>
+                <label for="languages" class="col-sm-4 control-label">Please list your favorite language (use commas):</label>
               <div class="col-sm-offset-4 col-sm-10">
-                    <select class="form-control" name="languages[]" multiple>
+              <input class="form-control" id="languages" name="languages" required>
+                    <!--<select class="form-control" name="languages[]" multiple>
                         <?php foreach($languages as $key => $language) : ?>
                         <option value="<?= $key ?>"
                         <?php if (in_array($key, $languages)) echo "selected" //== to allow conversion ?>
                         ><?= $languages[$key] ?>
                         </option>
                         <?php endforeach ?>
-                    </select>
+                    </select>-->
                 </div>
 
             <div class="form-group">

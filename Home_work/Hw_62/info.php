@@ -18,7 +18,7 @@
         $query = "SELECT * FROM seforim WHERE name = '$choice'";
         $results = $db->query($query);
         foreach($results as $key=>$value)
-            $array=['name'=>$value['name'], 'price'=> $value ['price'], 'Quantity'=> $value['Quantity']];
+            $array=['name'=>$value['name'], 'price'=>  number_format($value ['price'], 2), 'Quantity'=>$value['Quantity']];
         return $array;
              } catch(PDOException $e) {
         die("Something went wrong " . $e->getMessage());
