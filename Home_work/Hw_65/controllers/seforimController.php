@@ -28,10 +28,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
         if( empty($_POST['name']) xor empty($_POST['price']) xor empty($_POST['Quantity']) )
         $errors[]="in order to add a sefer all fields must be entered.";
         
+        
+        
         if (empty($errors)){
             $valid=true;
         }
 }
-include "seforimModel.php";
-include "seforimview.php";
+    if(!empty($_GET['catagory']))
+            $cat=$_GET['catagory'];
+
+include "models/seforimModel.php";
+include "views/seforimView.php";
 ?> 

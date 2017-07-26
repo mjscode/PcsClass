@@ -4,6 +4,7 @@
     $password = 'power';
     $success=false;
     $name='';
+    $dname="";
     // this is for taking the whole table in one array and working from there.
     try {
         $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
@@ -89,8 +90,11 @@
             <ul>
                 <?php echo "your student has been deleted";?>
             </ul>
-            <?php };?>
-        </div>
+            </div>
+            <?php };
+            print_r($studentAr);
+            ?>
+        
     </div>
     </body>
 </html>

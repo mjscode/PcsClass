@@ -1,8 +1,7 @@
 <?php
    include "sdb.php";
     
-         if(empty($_POST['name']) xor empty($_POST['price']) xor empty($_POST['Quantity']))
-        $errors[]="in order to add a sefer all fields must be entered.";
+         
         if(empty($errors)){
                     try {
                         $query = "INSERT INTO `seforim`(`name`, `price`, `Quantity`) VALUES (:theNm,:thePr,:theQn)";

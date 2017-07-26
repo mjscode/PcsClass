@@ -1,4 +1,5 @@
 <?php
+print_r($array);
 include "stop.php";
 ?>
 <div class="row">
@@ -11,5 +12,6 @@ include "stop.php";
     <div class="well col-sm-2 text-right">Quantity</div><div class="well col-sm-8"><?= $array['Quantity'] ?></div>
 </div>
 <?php
+
 include "sbot.php";
 ?>

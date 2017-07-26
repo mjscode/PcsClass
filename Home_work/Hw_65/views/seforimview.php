@@ -1,8 +1,6 @@
 <?php
-//include "seforimModel.php";
 include "stop.php"
 ?>
-<form class="form-inline" method="post" action="infoController.php">
         <div class="form-group">
         <?php if (!empty($errors)) : ?>
         <div class="alert alert-danger">
@@ -45,24 +43,54 @@ include "stop.php"
             <button type="submit" class="btn btn-default">Enter Info</button>
             </div>
             </form>
-                <label>Choose a Sefer to see info:</label>
-            <select name="info">
-                <?php 
-                 echo $string;
-                ?> 
+                <form class="form-inline" >
+            <div class="form-group">
+        <label for="sefer" class="col-sm-2 control-label">Select A catagory</label>
+        <div class="col-sm-10">
+        <select class="form-control" id="catagory" name="catagory">
+                <?php foreach($catagory as $key=>$variaty) :?>
+                <option value="<?= $variaty['catrgory']?>"
+                ><?= $variaty['catrgory']?></option>
+                <?php endforeach ?>
             </select>
+        </div>
+    </div>
+            <button type="submit" class="btn btn-default">Get Info</button>
+            </div>
+            </form>
+            <form class="form-inline" >
+            <div class="form-group">
+        <label for="sefer" class="col-sm-2 control-label">Select A Sefer</label>
+        <div class="col-sm-10">
+        <select class="form-control" id="sefer" name="sefer">
+                <?php foreach($seforim as $sefer) :?>
+                <option value="<?= $sefer['id'] ?>"
+                ><?= $sefer["name"] ?></option>
+                <?php endforeach ?>
+            </select>
+        </div>
+    </div>
+            <input type="hidden" name="action" value="info">
             <button type="submit" class="btn btn-default">Get Info</button>
             </div>
             </form>
             <form class="form-inline"  method ="post">
             <div class="form-group">
-                  <label>Choose a Sefer to delete:</label>
-            <select name="delete">
-                <?php 
-                 echo $string;
-                ?> 
+        <label for="delete" class="col-sm-2 control-label">Delete A Sefer</label>
+        <div class="col-sm-10">
+        <select class="form-control" id="delete" name="delete">
+                <?php foreach($seforim as $sefer) :?>
+                <option value="<?= $sefer['id'] ?>"
+                <?php if (!empty($did) && $did == $sefer['id']) echo "selected" ?>
+                ><?= $sefer["name"] ?></option>
+                <?php endforeach ?>
             </select>
+        </div>
+    </div>
             <button type="submit" class="btn btn-default">Delete</button>
             </div>
             </form>
-<?php include "sbot.php" ?>
+           
+<?php
+print_r($catagory);
+ include "sbot.php" ?>

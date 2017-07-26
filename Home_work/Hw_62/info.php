@@ -2,11 +2,11 @@
  
    
     function info(){
-         if(!isset($_POST['choice'])){
-        die("choice is necessary");
+         if(!isset($_POST['info'])){
+        die("info is necessary");
     }
     else{
-        $choice=$_POST['choice'];
+        $info=$_POST['info'];
     }
      try {
           $cs = "mysql:host=localhost;dbname=seforim";
@@ -15,7 +15,7 @@
         $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
         $db = new PDO($cs, $user, $password, $options);
 
-        $query = "SELECT * FROM seforim WHERE name = '$choice'";
+        $query = "SELECT * FROM seforim WHERE name = '$info'";
         $results = $db->query($query);
         foreach($results as $key=>$value)
             $array=['name'=>$value['name'], 'price'=>  number_format($value ['price'], 2), 'Quantity'=>$value['Quantity']];
@@ -26,7 +26,7 @@
     }
     }
     $info_ar=info();
-    $choice=$_POST['choice'];
+    $choice=$_POST['info'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
