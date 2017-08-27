@@ -4,7 +4,16 @@ $sPr = '';
 $sQn = '';
 $errors=[];
 $dname="";
-
+if(empty($categoryFilter)) {
+        $categoryFilter = [];
+    }
+   if(isset($_GET["category"])) {
+            if(empty($_GET["category"])) {
+                $error = "A valid category must be submitted";
+            }else{
+            $categoryFilter=$_GET['category'];
+        }
+        }
 if($_SERVER['REQUEST_METHOD'] == "POST") {
  if(isset($_POST['name'])){
         if(empty($_POST['name'])){
@@ -27,16 +36,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
         }}
         if( empty($_POST['name']) xor empty($_POST['price']) xor empty($_POST['Quantity']) )
         $errors[]="in order to add a sefer all fields must be entered.";
-        
-        
-        
-        if (empty($errors)){
+         if (empty($errors)){
             $valid=true;
         }
+        
+        
+     
 }
-    if(!empty($_GET['catagory']))
-            $cat=$_GET['catagory'];
-
 include "models/seforimModel.php";
 include "views/seforimView.php";
 ?> 

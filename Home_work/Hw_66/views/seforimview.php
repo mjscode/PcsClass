@@ -43,21 +43,22 @@ include "stop.php"
             <button type="submit" class="btn btn-default">Enter Info</button>
             </div>
             </form>
-                <form class="form-inline" >
-            <div class="form-group">
-        <label for="sefer" class="col-sm-2 control-label">Select A catagory</label>
-        <div class="col-sm-10">
-        <select class="form-control" id="catagory" name="catagory">
-                <?php foreach($catagory as $key=>$variaty) :?>
-                <option value="<?= $variaty['catrgory']?>"
-                ><?= $variaty['catrgory']?></option>
+            <div class="row">
+            <div class= "col-sm-3">
+                        <form>
+                <?php foreach($categories as $category) :?>
+                <div class="checkbox">
+                    <label>
+                    <input type="checkbox" name="category[]" value="<?= $category ?>"
+                        <?php if (in_array($category, $categoryFilter)) echo ' checked' ?>
+                    /><?= $category ?>
+                    </label>
+                </div>
                 <?php endforeach ?>
-            </select>
-        </div>
-    </div>
-            <button type="submit" class="btn btn-default">Get Info</button>
-            </div>
+
+                <input type="submit" value="filter"/>
             </form>
+                </div></div>
             <form class="form-inline" >
             <div class="form-group">
         <label for="sefer" class="col-sm-2 control-label">Select A Sefer</label>
@@ -92,5 +93,5 @@ include "stop.php"
             </form>
            
 <?php
-print_r($catagory);
- include "sbot.php" ?>
+ include "sbot.php"
+  ?>

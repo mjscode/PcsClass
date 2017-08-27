@@ -23,6 +23,7 @@ include "stop.php"
                         value="<?=$sNm?>"
                     >
             </div>
+            </div>
             <div class="form-group">
             <label for="name" class="col-sm-4 control-label">Enter the price of the sefer:</label>
                 <div class="col-sm-4">
@@ -39,26 +40,29 @@ include "stop.php"
                     >
                     </div>
             </div>
-            <div class="row">
+            
             <button type="submit" class="btn btn-default">Enter Info</button>
-            </div>
             </form>
-                <form class="form-inline" >
+            <hr>
+                <form class="form-Horizontal" >
             <div class="form-group">
-        <label for="sefer" class="col-sm-2 control-label">Select A catagory</label>
+        <label for="select" class="col-sm-2 control-label">Select A catagory</label>
         <div class="col-sm-10">
         <select class="form-control" id="catagory" name="catagory">
                 <?php foreach($catagory as $key=>$variaty) :?>
                 <option value="<?= $variaty['catrgory']?>"
                 ><?= $variaty['catrgory']?></option>
                 <?php endforeach ?>
+                <option value="<?= '' ?>"
+                ><?= '' ?></option>
             </select>
         </div>
     </div>
-            <button type="submit" class="btn btn-default">Get Info</button>
+            <button type="submit" class="btn btn-default">Select</button>
             </div>
             </form>
-            <form class="form-inline" >
+            <hr>
+            <form class="form-Horizontal" >
             <div class="form-group">
         <label for="sefer" class="col-sm-2 control-label">Select A Sefer</label>
         <div class="col-sm-10">
@@ -74,7 +78,8 @@ include "stop.php"
             <button type="submit" class="btn btn-default">Get Info</button>
             </div>
             </form>
-            <form class="form-inline"  method ="post">
+            <hr>
+            <form class="form-Horizontal"  method ="post">
             <div class="form-group">
         <label for="delete" class="col-sm-2 control-label">Delete A Sefer</label>
         <div class="col-sm-10">
@@ -92,5 +97,4 @@ include "stop.php"
             </form>
            
 <?php
-print_r($catagory);
  include "sbot.php" ?>

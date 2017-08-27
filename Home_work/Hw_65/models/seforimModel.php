@@ -1,6 +1,6 @@
 <?php
    include "utilitys/sdb.php";
-        if(empty($errors)){
+        if(empty($errors) && !empty($sNm)){
                     try {
                         $query = "INSERT INTO `seforim`(`name`, `price`, `Quantity`) VALUES (:theNm,:thePr,:theQn)";
                         $statement = $db->prepare($query);

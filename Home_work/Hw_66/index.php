@@ -1,9 +1,15 @@
 <?php
-    $action = "main";
+    $action = "seforim";
     if(!empty($_GET['action'])) {
         $action = $_GET['action'];
     }
-    switch($action){
+    if(file_exists("controllers/" . $action . "Controller.php")) {
+    include "controllers/" . $action . "Controller.php";
+} else {
+    $errors[] = "Sorry! We do not have the page '$action'";
+    include "views/error.php";
+}
+    /*switch($action){
         case 'main':
             include "controllers/seforimController.php";
             exit;
@@ -15,5 +21,5 @@
             include 'views/error.php';
             exit;
     
-    }
+    }*/
 ?>

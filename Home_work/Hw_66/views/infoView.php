@@ -1,5 +1,4 @@
 <?php
-print_r($array);
 include "stop.php";
 ?>
 <div class="row">
