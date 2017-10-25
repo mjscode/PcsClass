@@ -1,6 +1,6 @@
 <?php
-include "httpsonly.php";
-  $cs = "mysql:host=localhost;dbname=security";
+
+  $cs = "mysql:host=localhost;dbname=mytest";
     $user = "myuser";
     $password = 'power';
 if(!empty($_POST['name'])&&!empty($_POST['password'])){
