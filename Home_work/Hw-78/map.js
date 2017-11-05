@@ -1,15 +1,15 @@
 "use strict"
-var array1=[2,4,8];
+var array1=[2,4,'k'];
 function map(array,func){
     var array2=[];
     for(var i=0;i<array.length;i++){
         var element=func(array[i]);
-        array2.push(elemnt);
+        array2.push(element);
     }
-    return array2
+    return array2;
 };
 function double(numb){
-    if(!NaN(numb)){
+    if(!isNaN(numb)){
         return numb*2;
     }else{
         return numb;

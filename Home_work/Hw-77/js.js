@@ -15,13 +15,19 @@ myApp.Utils=(function(Utils){
             }
             return -1;
         }
-    
+        function pp(){
+            months.pop();
+        }
         return {
             getMonthName: function (num) {
                 return months[num - 1];
             },
             getMonthNumber: getNumber
-        };
+        ,
+        pp:function (){
+            return months.pop;
+        }
+    }
     }());
     Utils.checkStrings=(function () {
         return{
@@ -34,6 +40,9 @@ myApp.Utils=(function(Utils){
 }(myApp.Utils || {}));
 
 var x=myApp.Utils.months.getMonthName(2); 
+var z=myApp.Utils.months.pp();
+//var z=myApp.Utils.months.getMonthName(2); 
 var y=myApp.Utils.checkStrings.stringCaseInsensitiveEquals('apple', 'APPle');
 console.log(x);
 console.log(y);
+console.log(z);
