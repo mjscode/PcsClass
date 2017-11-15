@@ -11,19 +11,19 @@
     var textColorNumb=0;
     var backColorNumb=0;
     function createColorT(){
-        var number = textColorNumb % 256;
+        var number = textColorNumb % 768;
         textColorNumb += 1;
-        var first=Math.floor(number/3+2/3)+(Math.floor(number/100)*100);
-        var second=Math.floor(number/3+1/3)+(Math.floor(number/100)*100);
-        var third=Math.floor(number/3)+(Math.floor(number/100)*100);
+        var first=Math.floor(number/3+2/3);
+        var second=Math.floor(number/3+1/3);
+        var third=Math.floor(number/3);
         return "rgb("+first+","+second+","+third+")";
     }
     function createColorB(){
-        var number = backColorNumb % 256;
+        var number = backColorNumb % 768;
         backColorNumb += 1;
-        var first=Math.floor(number/3+2/3)+(Math.floor(number/100)*100);
-        var second=Math.floor(number/3+1/3)+(Math.floor(number/100)*100);
-        var third=Math.floor(number/3)+(Math.floor(number/100)*100);
+        var first=Math.floor(number/3+2/3);
+        var second=Math.floor(number/3+1/3);
+        var third=Math.floor(number/3);
         return "rgb("+first+","+second+","+third+")";
     }
     function changeColorT() {

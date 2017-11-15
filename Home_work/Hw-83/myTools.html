@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id ="someHTML">
+        <h1>Hey!</h1>
+        <p>blah</p>
+        <br>
+        <p>blah</p>
+        <br>
+        <p>blah</p>
+    </div>
+    <br>
+    <button id = "myButton">Button</button>
+    <script src="tools.js"></script>
+    <script>
+    var someHTML = pcs.tools.wrap('someHTML').hide();
+pcs.tools.wrap('myButton').click(function () {
+    someHTML.show().pulsate();
+});
+    </script>
+</body>
+</html>
