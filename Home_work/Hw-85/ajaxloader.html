@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        i {
+            padding: 5%;
+        }
+
+        i.fa {
+            font-size: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <label>Enter a Url to Load:</label>
+        <input id="input" type="text" required>
+        <button>Submit</button>
+    </form>
+    <i class="fa fa-refresh fa-spin"></i>
+    <div id="display"></div>
+    <script src="/jquery-3.2.1.min.js"></script>
+    <script src="ajaxloader.js"></script>
+</body>
+
+</html>
