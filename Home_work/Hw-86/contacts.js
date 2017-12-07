@@ -54,9 +54,9 @@
     $('#loadForm').submit(function (event) {
         var fileToLoad = theFilenameInput.val();
         errorElement.hide();
-        $.getJSON(fileToLoad, function (loadedFile) {
+        $.get(fileToLoad, function (loadedFile) {
             loadedFile.forEach(function (jstring) {
-                /*var asjsonString = JSON.stringify(jstring)
+                /*var asjsonString = JSON.stringify(jstring);
                 var jsObject = JSON.parse(asjsonString);
                 addContact(jsObject);*/
                 addContact(jstring);

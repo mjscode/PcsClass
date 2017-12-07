@@ -1,0 +1,38 @@
+[
+    {
+        "name": "steak",
+        "url": "http://www.homewetbar.com/blog/wp-content/uploads/2014/04/how-to-grill-steak.jpg",
+        "ingredients": [
+            "meat",
+            "pepper",
+            "salt"
+        ]
+    },
+    {
+        "name": "potatoes",
+        "url": "https://images.search.yahoo.com/yhs/search;_ylt=A0LEVjWxlylaSYcAFDEPxQt.;_ylu=X3oDMTEybGpyazhvBGNvbG8DYmYxBHBvcwMxBHZ0aWQDQjQ5ODFfMQRzZWMDc2M-?p=picture+of+mashed+potatoes&fr=yhs-iry-fullyhosted_003&th=96.6&tw=144.4&imgurl=http%3A%2F%2Fgraphics8.nytimes.com%2Fimages%2F2015%2F09%2F15%2Fdining%2F15POTATOES4%2F15POTATOES4-superJumbo.jpg&rurl=http%3A%2F%2Fwww.dishmaps.com%2Fclassic-mashed-potatoes%2F14494&size=255KB&name=Classic+Mashed+Potatoes+Recipe+%E2%80%94+Dishmaps&oid=2&h=1367&w=2048&turl=http%3A%2F%2Fts2.mm.bing.net%2Fth%3Fid%3DOIP.3_6Up7uTGRXbzroMlfoBLQExDM%26pid%3D15.1%26rs%3D1%26c%3D1%26qlt%3D95%26w%3D144%26h%3D96&tt=Classic+Mashed+Potatoes+Recipe+%E2%80%94+Dishmaps&sigr=11l96us9b&sigit=12vlabiib&sigi=12ltvqjfj&sign=11b81bn6g&sigt=11b81bn6g&hspart=iry&hsimp=yhs-fullyhosted_003",
+        "ingredients": [
+            "potato",
+            "salt",
+            "garlic"
+        ]
+    },
+    {
+        "name": "rice",
+        "url": "https://images.search.yahoo.com/yhs/search;_ylt=A0LEVi5jlyla.DoAb30PxQt.;_ylu=X3oDMTEybGpyazhvBGNvbG8DYmYxBHBvcwMxBHZ0aWQDQjQ5ODFfMQRzZWMDc2M-?p=pictures+of+rice&fr=yhs-iry-fullyhosted_003&th=116.9&tw=155.9&imgurl=http%3A%2F%2F1.bp.blogspot.com%2F_USIjFpRSPkE%2FS98XQUreP3I%2FAAAAAAAAAQM%2Fh_v-eC4HwYU%2Fs1600%2Frice.JPG&rurl=http%3A%2F%2Fmykindofcooking.blogspot.com%2F2010%2F05%2Ftip-rice.html&size=103KB&name=My+Kind+of+Cooking%3A+Tip%3A+Rice&oid=3&h=1200&w=1600&turl=http%3A%2F%2Fts2.mm.bing.net%2Fth%3Fid%3DOIP.5ZTtqiSK1cFeCmO1jnXIgAEsDh%26pid%3D15.1%26rs%3D1%26c%3D1%26qlt%3D95%26w%3D155%26h%3D116&tt=My+Kind+of+Cooking%3A+Tip%3A+Rice&sigr=11p39qecd&sigit=130nceh4n&sigi=12h2r1gem&sign=10tb22arp&sigt=10tb22arp&hspart=iry&hsimp=yhs-fullyhosted_003",
+        "ingredients": [
+            "rice",
+            "salt",
+            "water"
+        ]
+    },
+    {
+        "name": "salad",
+        "url": "https://images.search.yahoo.com/yhs/search;_ylt=A0LEVr7TlylaEhwA3JIPxQt.;_ylu=X3oDMTEybGpyazhvBGNvbG8DYmYxBHBvcwMxBHZ0aWQDQjQ5ODFfMQRzZWMDc2M-?p=picture+of+salad&fr=yhs-iry-fullyhosted_003&th=111.7&tw=167.6&imgurl=http%3A%2F%2Ffoodcombiningdiet.org%2Fwp-content%2Fuploads%2F2013%2F05%2Fsalad4.jpg&rurl=http%3A%2F%2Ffoodcombiningdiet.org%2Frecipes%2Ffood-combining-recipes-humble-salads.html&size=2435KB&name=Food+Combining+Diet.+The+Humble+Salad.+%7C+Food+Combining+Diet&oid=1&h=2592&w=3872&turl=http%3A%2F%2Fts4.mm.bing.net%2Fth%3Fid%3DOIP.RAnIxp4E2NrKZ_aIRplEcAEsDI%26pid%3D15.1%26rs%3D1%26c%3D1%26qlt%3D95%26w%3D167%26h%3D111&tt=Food+Combining+Diet.+The+Humble+Salad.+%7C+Food+Combining+Diet&sigr=12emmqg4f&sigit=130iuoduq&sigi=11rf7vb1p&sign=11sb1p712&sigt=11sb1p712&hspart=iry&hsimp=yhs-fullyhosted_003",
+        "ingredients": [
+            "cucumber",
+            "tomato",
+            "lettuce"
+        ]
+    }
+]
