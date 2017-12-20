@@ -1,25 +1,25 @@
 <?php
-//require "autoload.php";
-include "httpsonly.php";
+    include "utils/httpsonly.php";
+    include "utils/link.php";
 session_start();
 
-$action = "login";
+$action = "signin";
 if(!empty($_GET["action"])) {
     $action = $_GET["action"];
 }
 
 switch($action) {
     case "register":
-        include "register.php";
+        include "controllers/registerController.php";
         exit;
-        case "signin": 
-        include "signin.php";
+    case "signin": 
+        include "controllers/signinController.php";
         exit;
     case "homepage":
-        include "homepage.php";
+        include 'controllers/homeController.php';;
         exit;
-    case "users":
-        include "users.php";
+    case "logout":
+        include "utils/logOut.php";
         exit;
     case "info":
         include "info.php";

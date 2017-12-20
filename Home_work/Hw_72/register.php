@@ -1,8 +1,8 @@
 <?php
-
-  $cs = "mysql:host=localhost;dbname=mytest";
-    $user = "myuser";
-    $password = 'power';
+$success=false;
+$cs = "mysql:host=localhost;dbname=mytest";
+$user = "myuser";
+$password = 'power';
 if(!empty($_POST['name'])&&!empty($_POST['password'])){
         $name=$_POST['name'];
         $pass= $_POST['password']; 
@@ -20,7 +20,7 @@ if(!empty($_POST['name'])&&!empty($_POST['password'])){
     $statement->bindValue('pass', $hashP);
     $statement->execute();
     $statement->closeCursor();
-    $success="welcome $name, your name and password $pass and $hashP have been entered";
+    $success=true;
     } catch (PDOException $e) {
         $error = "Something went wrong " . $e->getMessage();
     }
@@ -46,8 +46,10 @@ if(!empty($_POST['name'])&&!empty($_POST['password'])){
 <?php
 if (!empty($error)){
     echo $error;
-}elseif(!empty($success)){
-    echo $success;
+}elseif($success===true){
+    $_SESSION['logged'] =true;
+    $_SESSION['name']=$name;
+    header("Location: index.php?action=homepage");
 }
 ?>
 </form>

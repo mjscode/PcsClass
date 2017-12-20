@@ -1,7 +1,7 @@
 <?php
 include "httpsonly.php";
 $login=false;
-  $cs = "mysql:host=localhost;dbname=security";
+  $cs = "mysql:host=localhost;dbname=mytest";
     $user = "myuser";
     $password = 'power';
 if(!empty($_POST['name'])&&!empty($_POST['password'])){
@@ -63,5 +63,7 @@ if (!empty($error)){
 }
 ?>
 </form>
+<h3>if you're currently not a user please register.</h3>
+<button><a href="index.php?action=register" class="button">register</a></button>
 </body>
 </html>
