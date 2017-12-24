@@ -3,7 +3,7 @@ include 'top.php';
 ?>
 <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-        <div id="signInForm" class="well text-center">
+        <div id="signInForm" class="well">
             <form  class="form-horizontal" action="index.php">
                 <div class="form-group">
                     <label class="control-label col-sm-2">UserName: </label>
