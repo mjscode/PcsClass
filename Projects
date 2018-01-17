@@ -1,0 +1,151 @@
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package minesweeper;
+
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.TreeSet;
+
+/**
+ *
+ * @author Owner
+ */
+public class Highscores
+{
+    TreeSet<HighScore> scores=new TreeSet();
+    int Max_Scores=3;
+
+    public Highscores() {
+        load1();
+    }
+      public void add(String name, int score)
+    {
+        HighScore hs = new HighScore(name, score);
+        if(scores.size() == Max_Scores)
+        {
+            scores.remove(get(scores.size()-1));
+        }
+        scores.add(hs);
+        
+        //Collections.sort(scores);
+        try
+        {
+            save1();
+        } catch (IOException ex)
+        {
+            
+        }
+    }
+    
+    public String toString(){
+        int counter=0;
+        StringBuilder sb=new StringBuilder();
+        for(HighScore score:scores){
+            sb.append(score.toString());
+            sb.append("\n");
+            counter++;
+            if(counter==Max_Scores)
+                break;
+        }
+        return sb.toString();
+    
+    }
+    public boolean checkHS(int time){
+        
+      return scores.size() < Max_Scores  
+                || time < get(scores.size()-1).score;
+            
+    }
+    public HighScore get(int x){
+        int counter=0;
+        if(x<=3)
+        {
+        for (HighScore score : scores) {
+            if(x==counter)
+                return score;
+            counter++;
+        }
+        }
+        return null;
+    } 
+    public void save1() throws IOException
+    {
+        String property = "user.home";
+        String userHome = System.getProperty(property);
+        File file = new File(userHome + "\\Documents\\Minesweeper\\HighScores.txt");
+        if(!file.exists())
+        {
+            new File(userHome + "\\Documents\\Minesweeper").mkdirs();
+            file.createNewFile();
+        }
+        PrintWriter pw = new PrintWriter(new FileWriter(file));
+        for (HighScore score : scores)
+        {
+            pw.println(score.name+ "," + score.score);
+        }
+        pw.close();
+    }
+    public void load1()
+    {
+        String property = "user.home";
+        String userHome = System.getProperty(property);
+        File file = new File(userHome + "\\Documents\\Minesweeper\\HighScores.txt");
+        if(!file.exists())
+        {
+            return;
+        }
+        try(BufferedReader br = new BufferedReader(new FileReader(file)))
+        {
+            String line = br.readLine();
+            while(line != null)
+            {
+                String[] split = line.split(",");
+                String name = split[0];
+                int score = Integer.parseInt(split[split.length-1]);
+                scores.add(new HighScore(name, score));
+                
+                //check for more info
+                line = br.readLine();
+            }
+        }catch (IOException ex)
+        {
+            
+        }
+    }
+    
+    
+    public class HighScore implements Comparable<HighScore>
+    {
+    String name;
+    int score;
+
+        public HighScore(String name, int score) {
+            this.name = name;
+            this.score = score;
+        }
+    public int compareTo(HighScore hs){
+//        if(score>hs.score)
+//            return 1;
+//        else if(score<hs.score)
+//            return -1;
+//        else
+//            return 0;
+//           return score-hs.score;
+           return Integer.compare(score, hs.score);
+        
+    }
+    public String toString(){
+        return name+": Score: "+score;
+    }
+    }
+    
+}
