@@ -6,8 +6,8 @@
 
 
     function resizeCanvas() {
-        var width = window.innerWidth - 10;
-        var height = window.innerHeight - 10;
+        var width = window.innerWidth - 20;
+        var height = window.innerHeight - 20;
 
         canvas.width = width - 20;
         canvas.height = height - 20;
@@ -21,36 +21,35 @@
         constructor() {
             this.direction = 'right';
             this.x = canvas.width / 2;
-            this.y = canvas.width / 2;
+            this.y = canvas.height / 2;
         }
 
         move() {
-            //console.log(this.direction);
             switch (this.direction) {
                 case 'right':
-                    this.y += 10;
-                    break;
-                case 'left':
-                    this.y -= 10;
-                    break;
-                case 'up':
                     this.x += 10;
                     break;
-                case 'down':
+                case 'left':
                     this.x -= 10;
+                    break;
+                case 'up':
+                    this.y += 10;
+                    break;
+                case 'down':
+                    this.y -= 10;
                     break;
             }
 
 
-            if (this.y < 0) {
+            if (this.x < 0) {
                 this.direction = 'right';
-            } else if (this.y >= canvas.width) {
+            } else if (this.x >= canvas.width - 20) {
                 this.direction = 'left';
             }
 
-            if (this.x < 0) {
+            if (this.y < 0) {
                 this.direction = 'down';
-            } else if (this.x >= canvas.height) {
+            } else if (this.y >= canvas.height - 20) {
                 this.direction = 'up';
             }
             context.beginPath();
