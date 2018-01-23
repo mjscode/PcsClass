@@ -2,7 +2,7 @@
     include "utils/httpsonly.php";
     include "utils/link.php";
 session_start();
-
+$settings=parse_ini_file("../../dbSettings.ini");
 
 $action = "homepage";
 if(!empty($_GET["action"])) {

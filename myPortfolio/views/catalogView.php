@@ -13,6 +13,13 @@
     #searchName{
         width:100%;
     }
+    .row{
+        padding-top:2%;
+    }
+    #sortForm{
+        border-top:2px solid black;
+        padding-bottom:2%;
+    }
     ";
     include 'top.php';
     if(!empty($_SESSION['categories'])){
@@ -31,7 +38,7 @@
             <div class="text-center"><img src="images/<?= lcfirst($items[0]->get('categoryName')) ?>.jpg" alt="picture of the category"/></div>
         </div>-->
         <div class="well">
-            <form  id="searchForm" class="form-horizontal" method="post" action="index.php?action=catalog">
+            <form  id="searchForm" class="form-horizontal" method="get" action="index.php?action=catalog">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
@@ -61,11 +68,11 @@
                     <label class="control-label col-sm-2 col-sm-offset-1">By category(ies): </label>
                     <div class="col-sm-7 text-left">
                         <?php foreach($categories as $category): ?>
-                            <label class="radio-inline"><input type="radio" value= <?= $category['id'] ?>
+                            <label class="checkbox-inline"><input type="checkbox" name="categoryId" value= <?= $category['id'] ?>
                             ><?= $category['name'] ?></label>
                         <?php endforeach ?>
                     </div>
-                    <label class="radio-inline col-sm-1"><input type="radio" value="all">Or All</label> 
+                    <label class="checkbox-inline col-sm-1"><input type="checkbox" name="categoryId" value="" checked>Or All</label> 
                 </div>
             </form>
         </div>
@@ -73,6 +80,16 @@
     <div class="row">
         <div class="col-sm-9 col-sm-offset-1">
             <?php include "pager.php"; ?>
+            <div class="row">
+                <form  id="sortForm" class="form-horizontal text-center" method="get" action="index.php?action=catalog">
+                    <label class="control-label col-sm-2 col-sm">Sort by: </label>
+                    <label class="radio-inline col-sm-2" ><input type="radio" name="sort" value="category" checked>Category</label>
+                    <label class="radio-inline col-sm-2"><input type="radio" name="sort" value="cheapest">Cheapest</label>
+                    <label class="radio-inline col-sm-2"><input type="radio" name="sort" value="expansive">Most Expansive</label>
+                    <label class="radio-inline col-sm-2"><input type="radio" name="sort" value="alphabetical">Alphabetical</label>
+                    <input  type="submit" name='sort' value="Sort"/>
+                </form>
+            </div>
             <table class="table table-striped">
                 <thead>
                     <tr>
