@@ -1,4 +1,5 @@
 <?php
+    $settings=parse_ini_file("../../dbSettings.ini");
     
     $cs = "mysql:host=localhost;dbname=mytest";
     $user = $settings['user'];

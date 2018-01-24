@@ -34,11 +34,9 @@
         <h3>Our Catalog</h3>
     </div>
     </header>
-    <!--<div class="row">
-            <div class="text-center"><img src="images/<?= lcfirst($items[0]->get('categoryName')) ?>.jpg" alt="picture of the category"/></div>
-        </div>-->
+
         <div class="well">
-            <form  id="searchForm" class="form-horizontal" method="get" action="index.php?action=catalog">
+            <form  id="searchForm" class="form-horizontal" method="get" >
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
@@ -59,6 +57,7 @@
                                 name="maxPrice" placeholder="Max. Price" >
                             </div>
                             <div class="col-sm-1">
+                                <input type="hidden" name="action" value="catalog" />
                                 <input  type="submit" name='search' value="Search"/>
                             </div>
                         </div>
@@ -68,7 +67,7 @@
                     <label class="control-label col-sm-2 col-sm-offset-1">By category(ies): </label>
                     <div class="col-sm-7 text-left">
                         <?php foreach($categories as $category): ?>
-                            <label class="checkbox-inline"><input type="checkbox" name="categoryId" value= <?= $category['id'] ?>
+                            <label class="checkbox-inline"><input type="checkbox" name="categoryId[]" value= <?= $category['id'] ?>
                             ><?= $category['name'] ?></label>
                         <?php endforeach ?>
                     </div>
@@ -81,12 +80,13 @@
         <div class="col-sm-9 col-sm-offset-1">
             <?php include "pager.php"; ?>
             <div class="row">
-                <form  id="sortForm" class="form-horizontal text-center" method="get" action="index.php?action=catalog">
+                <form  id="sortForm" class="form-horizontal text-center" method="get">
                     <label class="control-label col-sm-2 col-sm">Sort by: </label>
                     <label class="radio-inline col-sm-2" ><input type="radio" name="sort" value="category" checked>Category</label>
                     <label class="radio-inline col-sm-2"><input type="radio" name="sort" value="cheapest">Cheapest</label>
                     <label class="radio-inline col-sm-2"><input type="radio" name="sort" value="expansive">Most Expansive</label>
                     <label class="radio-inline col-sm-2"><input type="radio" name="sort" value="alphabetical">Alphabetical</label>
+                    <input type="hidden" name="action" value="catalog" />
                     <input  type="submit" name='sort' value="Sort"/>
                 </form>
             </div>

@@ -5,6 +5,9 @@
             width: 206px;
             height: 150px;
         }
+        .category{
+            padding-bottom:2%;
+        }
         header{
             border-bottom:black solid 2px;
             margin-bottom:2%;
@@ -14,6 +17,9 @@
         }
         #creditsBody{
             display:none;
+        }
+        #caption{
+           
         }
     ";
     include 'top.php';
@@ -48,8 +54,9 @@
                                 <img src="images/<?= $category->get('picture') ?>" alt="picture of the category"/>
                             </figure>
                             <figcaption class="text-center">
-                                <h4><?=$category->get('name')?></h4>
-                                <h4>Number of Items: <?= $category->get('selection') ?></h4>
+                                <h4 id="caption"><?=$category->get('name')?></h4>
+                                <hr>
+                                <p>Number of Items: <?= $category->get('selection') ?></p>
                                 <p>Example:<?=$category->get('example') ?></p>
                                 <h5>Most Expansive Item: $<?= $category->get('expansive') ?> Cheapest Item: $<?=$category->get('cheapest') ?></h5>
                             </figcaption>
