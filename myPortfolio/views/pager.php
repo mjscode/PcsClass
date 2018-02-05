@@ -6,7 +6,7 @@ if(!isset($page)) {
 }
 ?>
 
-<div class="row">
+<div class="row text-center">
     <div class="col-sm-1">    
     
         <a class="btn btn-primary"  

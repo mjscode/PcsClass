@@ -35,11 +35,6 @@ try {
     
     $statement->closeCursor();
 
-    if(empty($_SESSION['categories'])){
-        foreach($categoriesArray as $categoryArray){
-            $_SESSION['categories'][]=['name'=>$categoryArray['name'],'id'=>$categoryArray['id'],];
-        }
-    }
 } catch (PDOException $e) {
     $error = "Something went wrong " . $e->getMessage();
 }

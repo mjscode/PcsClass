@@ -1,16 +1,33 @@
 <?php
-    if(! empty($_GET['categoryId'])){
-        $categoryValue=$_GET['categoryId'];
-        if(gettype($categoryValue)==='array'){
-                foreach($categoryValue as $value){
-                    $id[]=$value;
-            }
-        }else{
-            $id=$_GET['categoryId'];
-        }
-    }else{
-        $id='';
+    if(!empty($_GET['delete'])){
+        $deleteId=$_GET['delete'];
+        include 'models/deleteModel.php';
     }
+    if(! empty($_GET['categoryId'])){
+        if(gettype($_GET['categoryId'])==='array'){
+            $ids=$_GET['categoryId'];
+        }elseif($_GET['categoryId']>0){
+            $ids[]=$_GET['categoryId'];
+        }
+    }
+    if(! empty($_GET['searchName'])){
+        $search=$_GET['searchName'];
+    }else{
+        $search='';
+    }
+
+    if(! empty($_GET['minPrice'])){
+        $min=$_GET['minPrice'];
+    }else{
+        $min='';
+    }
+        
+    if(! empty($_GET['maxPrice'])){
+        $max=$_GET['maxPrice'];
+    }else{
+        $max='';
+    }
+
 
     if(! empty($_GET["page"])) {
         if(!is_numeric($_GET["page"])) {
@@ -19,9 +36,14 @@
             $page = $_GET["page"];
         }
     }
-    if(! empty($_GET['search'])){
-        //$id=$_GET['searchCatagory'];
+    $sort='categoryId';
+    if(! empty($_GET['sort'])){
+        $valid=['price_desc','price_asc','categoryId','name'];
+        if(in_array($_GET['sort'],$valid)){
+            $sort=$_GET['sort'];
+        }
     }
+
     include 'models/catalogModel.php';
     include 'views/catalogView.php';
 ?>

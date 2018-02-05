@@ -23,8 +23,8 @@
         }
     ";
     include 'top.php';
-    if(!empty($_SESSION["logged"])){
-        $name=" ".$_SESSION['name'];
+    if($_SESSION["logged"]){
+        $name=$_SESSION['name'];
     }else{
         $name='';
     }

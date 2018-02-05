@@ -21,12 +21,12 @@
         #bottom{
             margin-top: 10%;
         }
-        .affix {
-            top:11%;
-            right:5%;
+
+        .jumbotron{
+            background-color:#4faf54;
         }
         #userN{
-            color:green;
+            color:orange;
         }
         #status{
             color:red;

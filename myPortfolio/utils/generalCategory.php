@@ -1,7 +1,7 @@
 <?php
     class generalCategory{
         private $name='All Items';
-        private $id='';
+        private $id=0;
         private $picture='storeFront.jpg';
 
         private $selection;
