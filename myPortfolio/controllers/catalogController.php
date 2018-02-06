@@ -1,8 +1,4 @@
 <?php
-    if(!empty($_GET['delete'])){
-        $deleteId=$_GET['delete'];
-        include 'models/deleteModel.php';
-    }
     if(! empty($_GET['categoryId'])){
         if(gettype($_GET['categoryId'])==='array'){
             $ids=$_GET['categoryId'];

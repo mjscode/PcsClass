@@ -4,8 +4,12 @@
 
     var allBox = $('#allBox'),
         check = $('.checkB'),
+        radio = $('input[type=radio]'),
         checkSetting;
 
+    radio.click(function (event) {
+        event.preventDefault();
+    });
     if (allBox.prop('checked')) {
         check.prop("disabled", true);
         check.prop("checked", true);
@@ -18,11 +22,13 @@
     });
 
     var deleteB = $(".deleteButton");
-
+    var ev;
     deleteB.on('click', function (event) {
         event.preventDefault();
-        event.stopPropagation();
+        ev = event;
     });
+    deleteB.dblclick(function () {
 
+    });
 
 }());

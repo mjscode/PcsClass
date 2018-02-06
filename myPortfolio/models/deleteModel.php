@@ -1,6 +1,8 @@
 <?php
     include 'utils/db.php';
     if($_SESSION['admin']){
+        if(!empty($_GET['delete'])){
+            $deleteId=$_GET['delete'];
         try {
 
             $query = "delete FROM items where id=:id";
@@ -11,6 +13,8 @@
         } catch (PDOException $e) {
             $errors[] = "Something went wrong " . $e->getMessage();
         }
+    }else{
+        $errors[]="Delete id required.";
     }else{
         $errors[]="Denied! Unauthorized access.";
     }

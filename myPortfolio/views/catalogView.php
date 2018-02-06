@@ -15,6 +15,9 @@
         margin-top:2%;
         margin-bottom:2%;
     }
+    .id{
+        display:none;
+    }
     #sortForm{
        
     }
@@ -123,8 +126,8 @@
                         <td><?= $item->get('price') ?></td>
                         <td><?= $item->get('categoryName') ?></td>
                         <td><?php if($_SESSION['admin']):?>
-                        <a  class='deleteButton' href=<?= getLink(['delete'=>$item->get('id')]) ?> >
-                            <button >delete</button></a>
+                        <div class="id"><?= $item->get('id') ?></div>
+                            <button class="deleteButton">delete</button>
                             <?php endif ?>
                             </td>
                     </tr>
