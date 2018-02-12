@@ -6,6 +6,5 @@
                 </div>
             </div>
         </div>
-    <script src="jsFiles/sidebar.js"></script>
     </body>
 </html>

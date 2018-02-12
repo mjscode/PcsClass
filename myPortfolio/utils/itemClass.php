@@ -3,7 +3,7 @@ class Item{
     private $id;
     private $categoryId;
     private $name;
-    private $amount;
+    private $amount=0;
     private $unit;
     private $price;
     private $categoryName;

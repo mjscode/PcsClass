@@ -51,8 +51,8 @@ include 'top.php';
             <div id='info'>
                 <div class="text-justify">
                     <strong>Welcome!</strong> This is is the sample log in page. You can sign in
-                    as a user using name: "joe", password: "crazy".<br>
-                     Or as an Administrator using "bob", "meany". <br>You can also register and include whatever information you wish 
+                    as a user using name: "geo13", password: "thirtygrav".<br>
+                     Or as an Administrator using "carlsons", "poncho45". <br>You can also register and include whatever information you wish 
                     (remember this is a sample website and any information you enter 
                     will be avaible to the public).
                     <br>

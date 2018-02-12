@@ -21,11 +21,11 @@
     #sortForm{
        
     }
-    #catalogHeader{
-    
-        
+    #catalogHeader{  
+    } ";
+    if(empty($errors)){
+        $styles.="#alertRow{display:none;}";
     }
-    ";
     include 'top.php';
 
     
@@ -46,6 +46,26 @@
         </div>
         </div>
     </header>
+    <div id="alertRow" class="row">
+            <div id='alertBox' class="col-sm-6 col-sm-offset-3 text-center"> 
+                <div class="alert alert-warning">
+                <div id="alerts">
+                <?php
+                    if (!empty($errors)):
+                        foreach($errors as $error):
+                ?> 
+                    <div><strong>Error!</strong> <?=$error?></div>
+                        <?php 
+                            endforeach;
+                            endif;
+                         ?>
+                        </div>
+                    <div>
+                        <button id='closeAlert'>Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     <div class="row" id="list">
         <div class="col-sm-2">
         <div class="well">
@@ -87,7 +107,9 @@
             </form>
         </div>
         </div>
-    
+        <?php 
+        include "modals/deleteModal.php";
+        ?>
        
         <div class="col-sm-10">
             <form id="sortForm" class="row text-center">
@@ -120,13 +142,14 @@
                 <tbody>
                     <?php foreach($items as $item) :?>
                     <tr class="item">
-                        <td><?= $item->get('name') ?></td>
+                        <td id="itemName"><?= $item->get('name') ?></td>
                         <td><?= $item->get('unit') ?></td>
-                        <td><?= $item->get('amount') ?></td>
+                        <td id="itemAmount"><?= $item->get('amount') ?></td>
                         <td><?= $item->get('price') ?></td>
                         <td><?= $item->get('categoryName') ?></td>
                         <td><?php if($_SESSION['admin']):?>
                         <div class="id"><?= $item->get('id') ?></div>
+                            <button class="updateButton">update</button>&nbsp;
                             <button class="deleteButton">delete</button>
                             <?php endif ?>
                             </td>
@@ -138,21 +161,6 @@
             <?php include "pager.php"; ?>
         </div>
     </div>
-    <?php
-    if (!empty($error)){
-        foreach($errors as $error):
-?>  
-        <div class="row">
-            <div id='alertBox' class="col-sm-6 col-sm-offset-3 text-center">
-                <div class="alert alert-warning">
-                    <strong>Error!</strong> <?=$error?>
-                </div>
-            </div>
-        </div>
-<?php
-        endforeach;
-    }; 
-?>
     <div class="row">
         <div class="col-sm-9 col-sm-offset-2">
     <div id="addPanel" class="panel panel-default" >

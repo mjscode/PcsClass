@@ -91,6 +91,7 @@
              </div>
             </div> 
             </div>
+            <script src="jsFiles/sidebar.js"></script>
 <?php
 include 'bottom.php';
 ?>

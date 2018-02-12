@@ -39,6 +39,7 @@
             $sort=$_GET['sort'];
         }
     }
+    $errors=[];
 
     include 'models/catalogModel.php';
     include 'views/catalogView.php';
