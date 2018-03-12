@@ -1,0 +1,17 @@
+<div>
+  <label>First Name:
+    <input #firstName/>
+  </label>
+  <label>Last Name:
+    <input #lastName />
+  </label>
+  <label>Email:
+    <input #email />
+  </label>
+  <label>Phone Number:
+    <input #phone />
+  </label>
+  <button (click)="add(firstName.value, lastName.value, email.value, phone.value)">
+    add
+  </button>
+</div>

@@ -62,6 +62,7 @@ include 'top.php';
         </div>
     </div>
 </div>
+<script src="jsFiles/logIn.js"></script>
 <?php
     include 'bottom.php';
 ?>

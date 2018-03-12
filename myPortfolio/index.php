@@ -26,8 +26,8 @@ switch($action) {
     case "logout":
         include "utils/logOut.php";
         exit;
-    case "info":
-        include "info.php";
+    case "profile":
+        include "controllers/profileController.php";
         exit;
     default:
         die("Dont know how to $action");

@@ -4,7 +4,7 @@
     
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" class="close" data-dismiss="modal" id='closeDelete'>&times;</button>
           <h4 class="modal-title">Are you sure you want to delete this item? </h4>
         </div>
         <div class="modal-body">
@@ -12,7 +12,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal" id="confirmDelete">Confirm</button>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" id='cancelDelete'>Cancel</button>
         </div>
       </div>
       

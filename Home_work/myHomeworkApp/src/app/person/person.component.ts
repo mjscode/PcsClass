@@ -10,6 +10,21 @@ export class PersonComponent {
 
     @Input()
     person: Person;
-    address: Address;
+    constructor() { }
+
+    ngOnInit() {
+    }
+
+    addFriend(friend: string) {
+        if (!this.person.friends) {
+            this.person.friends = [];
+        }
+        this.person.friends.push(friend);
+    }
+
+
+    deleteFriend(index: number) {
+        this.person.friends.splice(index, 1);
+    }
 
 }

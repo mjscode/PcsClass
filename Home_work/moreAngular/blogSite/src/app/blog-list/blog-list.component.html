@@ -1,0 +1,15 @@
+<ul>
+  <!--li *ngFor="let blog of blogs"-->
+  <li *ngFor="let blog of blogs | async">
+    <!--a [routerLink]="['/blog', blog.id]"-->
+    <a [routerLink]="['blog', blog.id]">
+      {{blog.name}}
+      <br/> {{blog.website}}
+      <!--<br/> {{blog.company.name}}-->
+      <br/> {{blog.company}}
+    </a>
+  </li>
+</ul>
+<a [routerLink]="['/foo']">Click here for free stuff!</a>
+
+<router-outlet></router-outlet>

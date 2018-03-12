@@ -1,0 +1,8 @@
+<h3>Items</h3>
+<div *ngIf="category">
+
+  <ul>
+    <li *ngFor="let item of category.items">{{item.name}}-${{item.price}}</li>
+  </ul>
+
+</div>

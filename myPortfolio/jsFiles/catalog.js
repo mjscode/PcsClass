@@ -29,38 +29,25 @@
         alertRow.toggle();
     });
 
-    var deleteB = $(".deleteButton"),
-        deleteBox = $('#deleteModal'),
-        deleteParagraph = $('#deleteBody'),
-        confirmDelete = $('#confirmDelete');
-
-    function deleteModal(itemElement) {
-        var id = itemElement.find('.id').text(),
-            name = itemElement.find('#itemName').text(),
-            stock = itemElement.find('#itemAmount').text();
-        console.log(stock);
-        var string = 'ID: &nbsp;' + id + ',    "' + name + '"     (' + stock + ' in stock:  )';
-        console.log(string);
-        deleteParagraph.htmltml(string);
-        deleteBox.modal("toggle");
-        confirmDelete.on('click', function () {
-            $.post("models/deleteModel.php", { delete: id }, function () {
-                itemElement.remove();
-            }).fail(function (jqxhr) {
-                var response = jqxhr.responseText;
-                alert = $('<div>' +
-                    '<strong>Error! </strong>' + response + '</div>'
-                ).appendTo(alertDiv);
-                if (alertRow.is(":hidden")) {
-                    alertRow.toggle();
-                }
-            });
-        });
-    }
+    var deleteB = $(".deleteButton");
 
     deleteB.click(function (event) {
         var item = $(event.target).closest('.item');
-        deleteModal(item);
+        modules.delete.show(item, alertDiv, alertRow);
+    });
+
+    var updateB = $(".updateButton");
+
+    updateB.click(function (event) {
+        var item = $(event.target).closest('.item');
+        modules.update.show(item, alertDiv, alertRow);
+    });
+
+    var addForm = $("#addForm");
+
+    addForm.on("submit", function (event) {
+        modules.add.show(alertDiv, alertRow);
+        event.preventDefault();
     });
 
 

@@ -1,0 +1,9 @@
+<ul>
+  <!--li *ngFor="let post of posts | async"-->
+  <li *ngFor="let post of postsToShow">
+    <h2>{{post.title}}</h2>
+    {{post.body}}
+  </li>
+</ul>
+<button (click)="previous()" [disabled]="index <= 0">prev</button>
+<button (click)="next()" [disabled]="index >= allPosts?.length - NUM_POSTS">next</button>

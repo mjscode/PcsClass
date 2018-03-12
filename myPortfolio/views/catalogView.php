@@ -78,11 +78,11 @@
                         </div>
                         <div class="form-group">
                             <label >Min: </label>    
-                                <input id="minIn" type="number" min='0' placeholder="Min" name="minPrice" value=<?=$min?> >
+                                <input id="minIn" type="number" min='0' step=".01" placeholder="Min" name="minPrice" value=<?=$min?> >
                                 </div>
                             <div class="form-group">
                             <label>Max: </label>
-                                <input id="maxIn" max='0' type="number" placeholder="Max"
+                                <input id="maxIn" min='0' type="number" step=".01" placeholder="Max"
                                 name="maxPrice" value=<?=$max?> >
                         </div>
                         <label >By category(ies): </label>                  
@@ -109,6 +109,9 @@
         </div>
         <?php 
         include "modals/deleteModal.php";
+        include "modals/updateModal.php";
+        include "modals/addModal.php";
+        include "modals/confirmationModal.php";
         ?>
        
         <div class="col-sm-10">
@@ -142,10 +145,10 @@
                 <tbody>
                     <?php foreach($items as $item) :?>
                     <tr class="item">
-                        <td id="itemName"><?= $item->get('name') ?></td>
-                        <td><?= $item->get('unit') ?></td>
-                        <td id="itemAmount"><?= $item->get('amount') ?></td>
-                        <td><?= $item->get('price') ?></td>
+                        <td class="itemName"><?= $item->get('name') ?></td>
+                        <td class="itemUnit"><?= $item->get('unit') ?></td>
+                        <td class="itemAmount"><?= $item->get('amount') ?></td>
+                        <td class="itemPrice"><?= $item->get('price') ?></td>
                         <td><?= $item->get('categoryName') ?></td>
                         <td><?php if($_SESSION['admin']):?>
                         <div class="id"><?= $item->get('id') ?></div>
@@ -166,15 +169,52 @@
     <div id="addPanel" class="panel panel-default" >
         <div class="panel-heading">Add an Item here:</div>
         <div class="panel-body">
-            <?php if(!$_SESSION['logged'] || !$_SESSION['admin']){
+            <?php
+            if(!$_SESSION['logged'] || !$_SESSION['admin']){
                 echo "<div class='row text-center'>Sorry! In order to add item you must be an Administrator.</div>";
-            }else{}
-            ?>
+            }else{ ?>
+            <form class="form-inline" id="addForm">
+                        <div class="form-group">
+                            <label>Name of the Item: </label>
+                                <input
+                                type="text" id="addName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Unit of the Item: </label>
+                                <input
+                                type="text" id="addUnit" >
+                        </div>
+                        <div class="form-group">
+                            <label>Number in Stock: </label>
+                                <input
+                                type="number" min="0" id="addStock" >
+                        </div>
+                        <div class="form-group">
+                            <label>Price of the Item: $</label>
+                                <input
+                                type="number" min="0" step=".01" id="addPrice" >
+                        </div>
+                        <div class="form-group">
+                            <label>Category of the Item: </label>
+                            <select class="form-control" id="addCategory" >
+                            <?php foreach($categories as $category) :?>
+                            <option value="<?= $category['id'] ?>"
+                            ><?= $category["name"] ?></option>
+                            <?php endforeach ?>
+                            </select>
+
+                        </div>
+                        <button id="addButton">Add Item</button>
+            </form>
+            <?php } ?>
         </div>
     </div>
     </div>
     </div>
-<script src="jsFiles/catalog.js"></script>
+    <script src="jsFiles/update.js"></script>
+    <script src="jsFiles/delete.js"></script>
+    <script src="jsFiles/add.js"></script>
+    <script src="jsFiles/catalog.js"></script>
 <?php
 include 'bottom.php';
 ?>

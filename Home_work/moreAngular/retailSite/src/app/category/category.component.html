@@ -1,0 +1,6 @@
+<h2>Choose a Category</h2>
+<button *ngFor="let category of categories" [class.selected]="category === selectedCategory" (click)="onSelect(category)">
+  {{category.name}}
+</button>
+<hr>
+<app-items-list [category]="selectedCategory"></app-items-list>

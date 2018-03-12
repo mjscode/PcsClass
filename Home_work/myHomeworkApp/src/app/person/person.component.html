@@ -1,3 +1,12 @@
 First Name: {{person.firstName}} Last Name: {{person.lastName}}
-<br> 
-<app-address [addres]="person.address"></app-address>
+<br>
+<app-address [address]="person.address"></app-address>
+<app-address [address]="person.address"></app-address>
+<ul>
+    <li *ngFor="let friend of person.friends; let i = index;">
+        {{friend}}
+        <button (click)="deleteFriend(i)">delete</button>
+    </li>
+</ul>
+<input #friendInput/>
+<button (click)="addFriend(friendInput.value)">Add Friend</button>

@@ -23,7 +23,6 @@
     }
     if(!empty($string)){
         http_response_code(500);
-        exit("Unable to delete contact, ".$string);
-    //echo json_encode($errors);
+        exit("Unable to delete item, ".$string);
     };
 ?>

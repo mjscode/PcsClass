@@ -59,6 +59,9 @@
                 <?php else:?>
                     <li><a href="<?= getLink(['action'=>'signin']) ?>">Log in</a></li>
                 <?php endif ?>
+                <?php if(!empty($_SESSION["logged"])):?>
+                <li><a href="<?= getLink(['action'=>'profile']) ?>">Profile</a></li>
+                <?php endif ?>
             </ul>
             <?php include 'label.php'; ?>
             </div>
